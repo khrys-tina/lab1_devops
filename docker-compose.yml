@@ -7,5 +7,5 @@ services:
   script:
     build: .
     volumes:
-      - ./myscript.sh:/myscript.sh
+      - ./script.sh:/script.sh
     command: sh -c "service cron start && tail -f /dev/null"
