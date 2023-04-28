@@ -1,0 +1,11 @@
+version: '3'
+services:
+  webserver:
+    image: nginx # або apache, в залежності від вибраного веб-серверу
+    ports:
+      - "80:80"
+  script:
+    build: .
+    volumes:
+      - ./myscript.sh:/myscript.sh
+    command: sh -c "service cron start && tail -f /dev/null"
